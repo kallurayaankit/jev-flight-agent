@@ -1,6 +1,12 @@
 # Jev Ultrafast — Browser Flight Agent
 
-A browser-use agent that finds flights using [Jev](https://typesafe.ai), TypeSafe AI's System One decision model. Built as my first project with Jev.
+A browser-use agent that finds flights using [Jev](https://typesafe.ai), TypeSafe AI's System One decision model. This repository is Ankit Kalluraya's adaptation of the open-source [Browser Use Jev Ultrafast project](https://github.com/browser-use/jev-ultrafast).
+
+## Attribution and my contribution
+
+The core browser agent, original demonstrations and performance measurements were implemented upstream by [Gregor Žunič (gregpr07)](https://github.com/gregpr07) and the Browser Use project. The upstream MIT licence and copyright notice are retained in [LICENSE](LICENSE).
+
+My contributions are the README and Windows setup documentation, repository ignore rules, and explicit UTF-8 file reads in `browser.py` and `demo.py` for Windows compatibility. These are adaptations of the upstream implementation, not original authorship of its core agent or benchmark results. See [my changes](https://github.com/kallurayaankit/jev-flight-agent/commit/6205ffa13fd043732ff2c1536b5870a933e21a26).
 
 ## What it does
 
@@ -14,7 +20,7 @@ Traditional browser agents screenshot the page and ask a large LLM "what should 
 - **A tiny LLM only writes text.** When Jev decides `TYPE_TEXT`, a small model generates the string. Jev's output tokens are free.
 - **DOM state, not screenshots.** The agent reads the page's interactive elements as an indexed table. No visual parsing.
 
-Result: ~7 seconds per flight search, ~$0.0039 per run.
+The upstream demonstration reports approximately 7 seconds for one flight-search task. Its [performance notes](docs/performance.md) describe the measurement boundaries and limited test scope. This is not a new benchmark by me or a guarantee for other searches; runtime and cost vary with models, pricing and page behaviour.
 
 ## Tech stack
 
